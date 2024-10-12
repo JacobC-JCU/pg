@@ -1,6 +1,6 @@
 print("Hello world!")
 
-def number (cislo):
+def sudy_nebo_lichy (cislo):
     print("Funkce spuštěná.")
     if cislo % 2 == 0:
         print(f"Cislo {cislo} je sude.")
