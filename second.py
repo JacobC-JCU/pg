@@ -1,11 +1,14 @@
 def cislo_text(cislo):
     cislo = int(cislo)
 
+    if 0 < cislo > 100:
+        return "Číslo mimo požadovaný rozsah.."
+
 
 
     if cislo > 20 and cislo < 100:
         desitky = cislo//10
-        prvni_cislo = {2: "Dvacet", 3: "Třicet", 4:"Čtyřicet", 5:"Padesát", 6:"Šedesát", 7:"Sedmdesát", 8:"Osmdesát", 9:"Devadesát"}
+        prvni_cislo = {2: "Dvacet ", 3: "Třicet ", 4:"Čtyřicet ", 5:"Padesát ", 6:"Šedesát ", 7:"Sedmdesát ", 8:"Osmdesát ", 9:"Devadesát "}
 
         jednotky = cislo%10
         druhe_cislo = {2: "dva", 3: "tři", 4:"čtyři", 5:"pět", 6:"šest", 7:"sedm", 8:"osm", 9:"devět"}
