@@ -17,10 +17,10 @@ def cislo_text(cislo):
 
     
     if cislo == 0:
-        print("Nula")
+        return "Nula"
 
     if cislo == 100:
-        print("Sto")
+        return "Sto"
 
     if cislo > 0 and cislo < 10:
         prvni_cislo = {1: "Jedna", 2: "Dva", 3: "Tři", 4:"Čtyři", 5:"Pět", 6:"Šest", 7:"Sedm", 8:"Osm", 9:"Devět"}
