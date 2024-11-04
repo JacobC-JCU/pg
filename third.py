@@ -11,9 +11,9 @@ def je_prvocislo():
             trueFalse += 1
 
     if trueFalse > 0:
-        print("Ćíslo není prvočíslo.")
+        return False
     if trueFalse == 0:
-        print("Číslo je prvočíslo.")
+        return True
 
 def vrat_prvocislo():
     cislo = input("Zadej horní rozsah: ")
@@ -33,7 +33,8 @@ def vrat_prvocislo():
 
         if prvocislo:
             seznam_Cisel.append(number)
-    print(seznam_Cisel)
+
+    return seznam_Cisel
 
 
 if __name__ == "__main__":
@@ -42,9 +43,13 @@ if __name__ == "__main__":
     menu = input("Zvolte možnost: ")
 
     if menu == "1":
-        je_prvocislo()
+        vysledek = je_prvocislo()
+        if vysledek:
+            print("Ćíslo je prvočíslo.")
+        else:
+            print("Číslo není prvočíslo.")
     elif menu == "2":
-        vrat_prvocislo()
+        print(vrat_prvocislo())
     else:
         print("Chybný formát odpovědi..")
 
