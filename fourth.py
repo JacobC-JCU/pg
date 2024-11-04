@@ -19,9 +19,11 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
         else:
             x = 1
         podminka3 = figurka["pozice"][0] < cilova_pozice[0] <= figurka["pozice"][0] + x
-        min0, max0 = sorted([cilova_pozice[1], figurka["pozice"][1]])
+
+
+        min0, max0 = sorted([cilova_pozice[0], figurka["pozice"][0]])
         for i in range(min0 + 1, max0):
-            if (cilova_pozice[0], i) in obsazene_pozice:
+            if (i, cilova_pozice[1]) in obsazene_pozice:
                 podminka4 = False
 
     # Jezdec
