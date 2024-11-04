@@ -19,6 +19,10 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
         else:
             x = 1
         podminka3 = figurka["pozice"][0] < cilova_pozice[0] <= figurka["pozice"][0] + x
+        min0, max0 = sorted([cilova_pozice[1], figurka["pozice"][1]])
+        for i in range(min0 + 1, max0):
+            if (cilova_pozice[0], i) in obsazene_pozice:
+                podminka4 = False
 
     # Jezdec
     elif figurka["typ"] == "jezdec":
@@ -66,7 +70,7 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
                 if (cilova_pozice[0], i) in obsazene_pozice:
                     podminka4 = False
 
-         # Kontrola horizontálního pohybu
+        # Kontrola horizontálního pohybu
         elif cilova_pozice[1] == figurka["pozice"][1]:
             podminka3 = True
             min0, max0 = sorted([cilova_pozice[0], figurka["pozice"][0]])
@@ -107,9 +111,8 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
         else:
             podminka3 = False
 
-        
-                    #    print(je_tah_mozny(kral, (3, 4), obsazene_pozice))  True?
-                    #    kral = {"typ": "král", "pozice": (1, 4)}
+            #    print(je_tah_mozny(kral, (3, 4), obsazene_pozice))  True?
+            #    kral = {"typ": "král", "pozice": (1, 4)}
 
 
     # Střelec
@@ -132,12 +135,12 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
 
 # Testing the function
 if __name__ == "__main__":
-    pesec = {"typ": "pěšec", "pozice": (2, 2)}
     jezdec = {"typ": "jezdec", "pozice": (3, 3)}
     vez = {"typ": "věž", "pozice": (8, 8)}
     strelec = {"typ": "střelec", "pozice": (6, 3)}
     dama = {"typ": "dáma", "pozice": (8, 3)}
     kral = {"typ": "král", "pozice": (1, 4)}
+    pesec = {"typ": "pěšec", "pozice": (2, 2)}
     obsazene_pozice = {(2, 2), (8, 2), (3, 3), (5, 4), (8, 3), (8, 8), (6, 3), (1, 4)}
 
     print(je_tah_mozny(pesec, (3, 2), obsazene_pozice))  # True
@@ -152,6 +155,5 @@ if __name__ == "__main__":
 
     print(je_tah_mozny(dama, (8, 1), obsazene_pozice))  # False, dámě v cestě stojí jiná figura
     print(je_tah_mozny(dama, (1, 3), obsazene_pozice))  # False, dámě v cestě stojí jiná figura
-    print(je_tah_mozny(dama, (3, 8), obsazene_pozice))  # True  
-
+    print(je_tah_mozny(dama, (3, 8), obsazene_pozice))  # True
 
