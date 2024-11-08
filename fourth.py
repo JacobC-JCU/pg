@@ -132,7 +132,7 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
             podminka3 = False
 
     # Pokud všechno True, vrací True, v opačném případě False
-    return f"Tah figurkou {figurka["typ"]} z pozice {figurka["pozice"]} na pozici {cilova_pozice} je {podminka1 and podminka2 and podminka3 and podminka4}"
+    return podminka1 and podminka2 and podminka3 and podminka4
 
 
 # Testing the function
